@@ -4,5 +4,5 @@ from . import views
 app_name = 'user'
 
 urlpatterns = [
-    re_path(r'^$', views.store, name='user_store')
+    path('', views.store, name='user_store')
 ]
