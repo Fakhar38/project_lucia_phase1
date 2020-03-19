@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'django_countries',
+    'phone_field',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +138,5 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = 'static'
 MEDIA_ROOT = 'media'
+
+AUTH_USER_MODEL = 'core.User'
