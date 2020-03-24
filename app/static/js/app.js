@@ -17,6 +17,11 @@ $(document).ready( function(){
         $('.login-page-container').animate({ width: toggleWidthPage });
         $('.login-page').css({ display: "none" });    
     });
+    $('.home-page-image-gallery-container').click( function() {
+        var toggleWidthPage = $(".login-page-container").width() == "0" ? "50vw" : "0";
+        $('.login-page-container').animate({ width: toggleWidthPage });
+        $('.login-page').css({ display: "none" });    
+    });
     $('.fa-clone').click( function() {
         $('.mobile-login-container').css({ display: "none" });    
         $('.mobile-container').css({ display: "block" });    
