@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 {% load static %}
-{% get_static_prefix as STATIC_SUFFIX %}
+{% get_static_prefix as STATIC_PREFIX %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Lucia</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/app.js' %}" defer></script>
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/style.css">
+    <script src="{{ STATIC_PREFIX }}js/app.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="https://kit.fontawesome.com/6c5f0342bd.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +18,7 @@
         <div class="home-page-image-gallery-container">
             <!-- this is the container for image -->
             <div class="image-container">
-                <img src="{% static 'images/first.png' %}" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/first.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -35,11 +35,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="{{ STATIC_SUFFIX }}images/second.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/second.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -56,11 +56,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="{{ STATIC_SUFFIX }}images/third.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/third.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -77,11 +77,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="{{ STATIC_SUFFIX }}images/fourth.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/fourth.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -98,11 +98,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="{{ STATIC_SUFFIX }}images/fifth.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/fifth.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -119,11 +119,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="{{ STATIC_SUFFIX }}images/third.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_PREFIX }}images/third.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -140,7 +140,7 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
         </div>
@@ -149,34 +149,18 @@
             <!-- this is the profile picture -->
             <div class="profile-picture-div">
                 <div class="profile-pic">
-                    <img src="{{ STATIC_SUFFIX }}images/profilepic.png" alt="" class="profile-image">
+                    <img src="{{ STATIC_PREFIX }}images/profilepic.png" alt="" class="profile-image">
                 </div>
             </div>
         </div>
         <!-- this is the container for login page -->
         <div class="login-page-container">
-            <div class="login-page">
-                <div class="login-page-cross-button">
-                    <div class="close-login-page-container">
-                        <i class="fas fa-clone"></i>
-                    </div>
-                </div>
-                <div class="login-page-heading">
-                    Login
-                </div>
-                <div class="login-page-inputs">
-                    <div class="inputs-container">
-    
-                        <div class="username-input-div">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" class="username-input" placeholder="@LuciaMareno">
-         <form class="ajax-login-form" method="post">
-            {% csrf_token %}
-            <div class="login-page-container">
+            <form class="ajax-web-login-form" method="post" action="{% url 'authenticate' %}">
+                {% csrf_token %}
                 <div class="login-page">
                     <div class="login-page-cross-button">
                         <div class="close-login-page-container">
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-clone"></i>
                         </div>
                     </div>
                     <div class="login-page-heading">
@@ -187,22 +171,21 @@
 
                             <div class="username-input-div">
                                 <label for="username">Username:</label>
-                                <input type="text" id="username" class="username-input" name="username" placeholder="@LuciaMareno">
+                                <input type="text" id="username" name="username" class="username-input" placeholder="@LuciaMareno">
                             </div>
                             <div class="password-input-div">
                                 <label for="password">Password:</label>
-                                <input type="password" id="password" class="password-input" name="password" placeholder="Hello1234">
+                                <input type="password" id="password" name="password" class="password-input" placeholder="Hello1234">
                             </div>
-                            <br>
-                            <p class="login-request-result" style="color: #8b150f"></p>
+                            <p style="color: #8b1915" class="web-login-request-error"></p>
                         </div>
                     </div>
                     <div class="login-page-button">
-                        <input type="submit" name="submit" value="Login" class="login-button">
+                        <input type="submit" class="login-button" value="Login">
                     </div>
                 </div>
-            </div>
-         </form>
+            </form>
+        </div>
         <!-- this is the container for filter button -->
         <div class="home-page-filter-button-container">
             <div class="filter-button">
@@ -250,16 +233,19 @@
         </div>
         <!-- this is the container for cart button -->
         <div class="home-page-cart-button-container">
-            <img src="{{ STATIC_SUFFIX }}images/cart.png" alt="" class="cart-image">
+            <img src="{{ STATIC_PREFIX }}images/cart.png" alt="" class="cart-image">
         </div>
     </div>
     <!-- container for web is ended here -->
+
+
+
     <div class="mobile-container">
-        <img src="images/LuciaCM.png" alt="" class="mobile-image">
+        <img src="{{ STATIC_PREFIX }}images/LuciaCM.png" alt="" class="mobile-image">
         <!-- this is the container for profile pic -->
         <div class="profile-picture-container">
             <div class="profile-picture-div-mob">
-                <img src="images/profilepic.png" alt="" class="mobile-profile-image">
+                <img src="{{ STATIC_PREFIX }}images/profilepic.png" alt="" class="mobile-profile-image">
             </div>
         </div>
         <!-- this is the container for filters button -->
@@ -273,83 +259,97 @@
         <!-- this is the container for share button -->
         <div class="share-button-container">
             <div class="share-button-mob">
-                <img src="images/share-button.svg" alt="" class="share-mob-image">
+                <img src="{{ STATIC_PREFIX }}images/share-button.svg" alt="" class="share-mob-image">
             </div>
         </div>
         <!-- this is the container for cart button -->
         <div class="cart-button-container">
             <div class="cart-button-mob">
-                <img src="images/cart.png" alt="" class="cart-mob-image">
+                <img src="{{ STATIC_PREFIX }}images/cart.png" alt="" class="cart-mob-image">
             </div>
         </div>
     </div>
     <div class="mobile-login-container">
-        <div class="mob-back-div">
-            <div class="mob-login-heading-div">
-                Login
-            </div>
-            <div class="back-container">
-                <i class="fas fa-clone"></i>
-            </div>
-        </div>
-        <div class="mob-login-inputs-div">
-            <div class="mob-login-inputs">
-                <div class="mob-username-div">
-                    <label for="mobusername">Username</label>
-                    <input type="text" id="mobusername" class="mob-username-input" placeholder="@Lucia">
+        <form class="mobile-login-form-ajax" method="post" action="{% url 'authenticate' %}">
+            {% csrf_token %}
+
+            <div class="mob-back-div">
+                <div class="mob-login-heading-div">
+                    Login
                 </div>
-                <div class="mob-password-div">
-                    <label for="mobpassword">Password</label>
-                    <input type="text" id="mobpassword" class="mob-password-input" placeholder="Hello1234">
+                <div class="back-container">
+                    <i class="fas fa-clone"></i>
                 </div>
             </div>
-        </div>
-        <div class="mob-login-button-div">
-            <button class="login-button-mob">
-                Login
-            </button>
-        </div>
+            <div class="mob-login-inputs-div">
+                <div class="mob-login-inputs">
+                    <div class="mob-username-div">
+                        <label for="mobusername">Username</label>
+                        <input type="text" id="mobusername" name="username" class="mob-username-input" placeholder="@Lucia">
+                    </div>
+                    <div class="mob-password-div">
+                        <label for="mobpassword">Password</label>
+                        <input type="password" id="mobpassword" name="password" class="mob-password-input" placeholder="Hello1234">
+                    </div>
+                    <p style="color: #8b1915" class="mobile-login-error-field"></p>
+                </div>
+            </div>
+            <div class="mob-login-button-div">
+                <input type="submit" class="login-button-mob" value="Login">
+
+            </div>
+        </form>
     </div>
 
 
 
-    <!-- AJAX for login form -->
-    <script type="application/javascript">
-        $(document).ready(function () {
 
-                //ajax login form
-                let webLoginForm = $('.ajax-login-form');
-                let webLoginPage = $('.login-page-container');
-                let webLoginRequestResult = $('.login-request-result');
+<script type="application/javascript">
+    $(document).ready(function () {
+        let webLoginPage = $('.login-page-container');
+        let webLoginForm = $('.ajax-web-login-form');
+        let webLoginErrorField = $('.web-login-request-error');
+        let mblLoginPage = $('.mobile-login-container');
+        let mblLoginFOrm = $('.mobile-login-form-ajax');
+        let mblLoginErrorField = $('.mobile-login-error-field');
 
-                webLoginForm.submit(function (e) {
-                    e.preventDefault();
-                    console.log('login pressed');
-                    let data = webLoginForm.serialize();
+
+        webLoginForm.submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: {% url 'authenticate' %},
+                method: 'POST',
+                data: webLoginForm.serialize(),
+                success: function (data) {
                     console.log(data);
-                    let action = {% url 'authenticate' %};
-                    let method = webLoginForm.attr('method');
-
-                    $.ajax({
-                        url: action,
-                        method: method,
-                        data: data,
-                        success: function (data) {
-                            if (data.authenticated){
-                                webLoginPage.html('<h2 style="text-align: center">Welcome {{ user.username }}</h2><br><p>Control Panel is under construction</p>')
-                            }
-                        },
-                        error: function (errors) {
-                            console.log('error', errors);
-                            webLoginRequestResult.html("username/password is invalid");
-                        },
-                    })
-
-
-                })
-
-
+                    webLoginPage.html("<h1 style=\"text-align: center\">Welcome on Board {{ user.username }}</h1>")
+                },
+                error: function (data) {
+                    console.log(data);
+                    webLoginErrorField.html("username/password is invalid!")
+                }
             })
-    </script>
+        })
+
+        mblLoginFOrm.submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: {% url 'authenticate' %},
+                method: 'POST',
+                data: mblLoginFOrm.serialize(),
+                success: function (data) {
+                    console.log(data);
+                    mblLoginPage.html("<h1 style=\"text-align: center\">Welcome on Board {{ user.username }}</h1>")
+                },
+                error: function (data) {
+                    console.log(data);
+                    mblLoginErrorField.html('username/password is invalid!');
+                }
+            })
+        })
+    })
+
+</script>
+
 </body>
 </html>
