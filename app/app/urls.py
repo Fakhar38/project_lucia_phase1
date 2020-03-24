@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from user.views import authenticate_view
+from user.views import authenticate_view, homepage_view
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage_view, name='homepage'),
     path('authenticate/', authenticate_view, name='authenticate'),
     # re_path(r'^(?P<username>\w+)/', include('user.urls')),
     path('<str:username>/', include('user.urls')),

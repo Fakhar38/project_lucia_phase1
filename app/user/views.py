@@ -5,6 +5,10 @@ from django.http import JsonResponse
 User = get_user_model()
 
 
+def homepage_view(request):
+    return render(request, 'homepage.html')
+
+
 def index(request, username):
     """
     Checks if username exists then renders the store page
