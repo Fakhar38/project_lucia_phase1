@@ -1,0 +1,288 @@
+@font-face {
+    src: url(fonts/futura.ttf);
+    font-family: futura;
+}
+@font-face {
+    src: url(fonts/avenir.otf);
+    font-family: avenir;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.home-page-container {
+    height: 116vh;
+    position: relative;
+}
+.home-page-image-gallery-container {
+    height: 116vh;
+    width: 114vw;
+    display: flex;
+}
+.image-container {
+    height: 100%;
+    width: 19vw;
+    background-color: red;
+    position: relative;
+    cursor: pointer;
+}
+.image-in-gallery {
+    width: 100%;
+    height: 100%;
+}
+.tag-button-container {
+    position: absolute;
+    width: 3.5vw;
+    height: 11vh;
+    background-color: rgba(0, 0, 0, 0.657);
+    bottom: 8.5%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.add-button-div {
+    font-family: futura;
+    color: white;
+    font-weight: bold;
+    font-size: 0.5vw;
+    writing-mode: vertical-rl;
+}
+.tag-button-add-button-div {
+    width: 2.4vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.fa-tag {
+    color: white;
+    font-size: 1.4vw;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.price {
+    color: white;
+    font-family: avenir;
+    font-size: 0.7vw;
+}
+.share-button-container {
+    position: absolute;
+    width: 40%;
+    height: 10vh;
+    bottom: 0;
+}
+.share-button {
+    margin-left: 1vw;
+    margin-top: 4.4vh;
+}
+.home-page-profile-picture-container {
+    position: fixed;
+    width: 10%;
+    height: 12vh;
+    top: 0;
+    cursor: pointer;
+}
+.profile-picture-div {
+    position: absolute;
+    top: 4.2vh;
+    left: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.profile-pic {
+    width: 54px;
+    height: 54px;
+    background-color: black;
+    border-radius: 50%;
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+}
+.login-page-container {
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+}
+.login-page-cross-button {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    border-top-right-radius: 2vw;
+    justify-content: flex-end;
+}
+.close-login-page-container {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-top-right-radius: 2vw;
+}
+.fa-times {
+    font-size: 2vw;
+}
+.login-page-heading {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: futura;
+    font-size: 22px;
+    font-weight: bold;
+}
+.login-page-inputs {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs-container {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.inputs-container  label {
+    opacity: 69%;
+    color: black;
+    font-family: futura;
+    font-size: 18px;
+}
+.username-input-div {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.password-input-div {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.username-input , .password-input {
+    border: none;
+    outline: none;
+    font-family: futura;
+    width: 10vw;
+    height: 6vh;
+    font-size: 18px;
+}
+.username-input::placeholder {
+    text-align: center;
+}
+.password-input::placeholder {
+    text-align: center;
+}
+.login-page-button {
+    width: 100%;
+    height: 10vh;
+    margin-top: 38vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-button {
+    width: 30%;
+    height: 65%;
+    background-color: black;
+    color: white;
+    font-family: futura;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+.login-page {
+    display: none;
+}
+.home-page-filter-button-container {
+    position: fixed;
+    width: 10%;
+    height: 12vh;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.filter-button {
+    position: absolute;
+    top: 8vh;
+    right: 2.8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.line-filter-1 , .line-filter-2 , .line-filter-3 {
+    width: 1.8vw;
+    height: 0.525vh;
+    border-radius: 1.5px;
+    background-color: white;
+    margin-top: 0.45vh;
+}
+.line-filter-2 {
+    width: 1.4vw;
+}
+.line-filter-3 {
+    width: 0.8vw;
+}
+.filters-container {
+    width: 20vw;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0;
+}
+.close-filters-container {
+    position: relative;
+    right: -50%;
+    top: 10%;
+    width: 10vw;
+    height: 8vh;
+    background-color: black;
+    cursor: pointer;
+}
+.home-page-cart-button-container {
+    position: fixed;
+    width: 10%;
+    height: 12vh;
+    bottom: 0;
+    right: 0;
+}
+.cart-image {
+    width: 2vw;
+    height: 5vh;
+    position: absolute;
+    right: 2vw;
+    bottom: 3vh;
+}
