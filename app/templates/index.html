@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="login-page-button">
-                        <button class="login-button">Login</button>
+                        <input type="submit" name="submit" value="Login" class="login-button">
                     </div>
                 </div>
             </div>
@@ -215,17 +215,17 @@
         $(document).ready(function () {
 
                 //ajax login form
-                let loginForm = $('.ajax-login-form');
-                let loginPage = $('.login-page-container');
-                let loginRequestResult = $('.login-request-result');
+                let webLoginForm = $('.ajax-login-form');
+                let webLoginPage = $('.login-page-container');
+                let webLoginRequestResult = $('.login-request-result');
 
-                $('.login-button').click(function (e) {
+                webLoginForm.submit(function (e) {
                     e.preventDefault();
                     console.log('login pressed');
-                    let data = loginForm.serialize();
+                    let data = webLoginForm.serialize();
                     console.log(data);
                     let action = {% url 'authenticate' %};
-                    let method = loginForm.attr('method');
+                    let method = webLoginForm.attr('method');
 
                     $.ajax({
                         url: action,
@@ -233,12 +233,12 @@
                         data: data,
                         success: function (data) {
                             if (data.authenticated){
-                                loginPage.html('<h2 style="text-align: center">Welcome {{ user.username }}</h2><br><p>Control Panel is under construction yet</p>')
+                                webLoginPage.html('<h2 style="text-align: center">Welcome {{ user.username }}</h2><br><p>Control Panel is under construction</p>')
                             }
                         },
                         error: function (errors) {
                             console.log('error', errors);
-                            loginRequestResult.html("username/password is invalid");
+                            webLoginRequestResult.html("username/password is invalid");
                         },
                     })
 
