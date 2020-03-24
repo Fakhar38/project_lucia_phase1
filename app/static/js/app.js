@@ -17,6 +17,10 @@ $(document).ready( function(){
         $('.login-page-container').animate({ width: toggleWidthPage });
         $('.login-page').css({ display: "none" });    
     });
+    $('.home-page-image-gallery-container').click( function() {
+        $('.login-page-container').animate({ width: "0" });
+        $('.login-page').css({ display: "none" });    
+    });
     $('.fa-clone').click( function() {
         $('.mobile-login-container').css({ display: "none" });    
         $('.mobile-container').css({ display: "block" });    
