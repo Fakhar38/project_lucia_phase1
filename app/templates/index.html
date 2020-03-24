@@ -154,6 +154,22 @@
             </div>
         </div>
         <!-- this is the container for login page -->
+        <div class="login-page-container">
+            <div class="login-page">
+                <div class="login-page-cross-button">
+                    <div class="close-login-page-container">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                </div>
+                <div class="login-page-heading">
+                    Login
+                </div>
+                <div class="login-page-inputs">
+                    <div class="inputs-container">
+    
+                        <div class="username-input-div">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="username-input" placeholder="@LuciaMareno">
          <form class="ajax-login-form" method="post">
             {% csrf_token %}
             <div class="login-page-container">
@@ -197,14 +213,101 @@
         </div>
         <!-- this is the container for all filters -->
         <div class="filters-container">
-            <!-- this is the container for closing filters container -->
-            <div class="close-filters-container">
+            <div class="filters-page">
+                <div class="filter-menu-div">
+                    <div class="filter-menu">
+                        <div class="filter-button-inner-page">
+                            <div class="inner-line-filter-1"></div>
+                            <div class="inner-line-filter-2"></div>
+                            <div class="inner-line-filter-3"></div>
+                        </div>
+                        <div class="close-filters-container">
+                            <i class="fas fa-times"></i>
+                        </div> 
+                    </div>                 
+                </div>
+                <div class="filter-heading-div">
 
+                </div>
+                <div class="gender-filter-div">
+
+                </div>
+                <div class="top-new-filter-div">
+
+                </div>
+                <div class="categories-filter-div">
+
+                </div>
+                <div class="tos-faq-page-div">
+                    <div class="faq-div">
+                        FAQ
+                    </div>
+                    <div class="tos-div">
+                        TOS
+                    </div>
+                </div>
             </div>
         </div>
         <!-- this is the container for cart button -->
         <div class="home-page-cart-button-container">
             <img src="{{ STATIC_SUFFIX }}images/cart.png" alt="" class="cart-image">
+        </div>
+    </div>
+    <!-- container for web is ended here -->
+    <div class="mobile-container">
+        <img src="images/LuciaCM.png" alt="" class="mobile-image">
+        <!-- this is the container for profile pic -->
+        <div class="profile-picture-container">
+            <div class="profile-picture-div-mob">
+                <img src="images/profilepic.png" alt="" class="mobile-profile-image">
+            </div>
+        </div>
+        <!-- this is the container for filters button -->
+        <div class="filters-menu-container">
+            <div class="filter-button-mob">
+                <div class="mob-filter-line-1"></div>
+                <div class="mob-filter-line-2"></div>
+                <div class="mob-filter-line-3"></div>
+            </div>
+        </div>
+        <!-- this is the container for share button -->
+        <div class="share-button-container">
+            <div class="share-button-mob">
+                <img src="images/share-button.svg" alt="" class="share-mob-image">
+            </div>
+        </div>
+        <!-- this is the container for cart button -->
+        <div class="cart-button-container">
+            <div class="cart-button-mob">
+                <img src="images/cart.png" alt="" class="cart-mob-image">
+            </div>
+        </div>
+    </div>
+    <div class="mobile-login-container">
+        <div class="mob-back-div">
+            <div class="mob-login-heading-div">
+                Login
+            </div>
+            <div class="back-container">
+                <i class="fas fa-clone"></i>
+            </div>
+        </div>
+        <div class="mob-login-inputs-div">
+            <div class="mob-login-inputs">
+                <div class="mob-username-div">
+                    <label for="mobusername">Username</label>
+                    <input type="text" id="mobusername" class="mob-username-input" placeholder="@Lucia">
+                </div>
+                <div class="mob-password-div">
+                    <label for="mobpassword">Password</label>
+                    <input type="text" id="mobpassword" class="mob-password-input" placeholder="Hello1234">
+                </div>
+            </div>
+        </div>
+        <div class="mob-login-button-div">
+            <button class="login-button-mob">
+                Login
+            </button>
         </div>
     </div>
 

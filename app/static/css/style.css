@@ -139,8 +139,9 @@ body::-webkit-scrollbar {
     cursor: pointer;
     border-top-right-radius: 2vw;
 }
-.fa-times {
-    font-size: 2vw;
+.fa-clone {
+    font-size: 1.6vw;
+    transform: rotate(180deg);
 }
 .login-page-heading {
     height: 6vh;
@@ -221,6 +222,7 @@ body::-webkit-scrollbar {
     border: none;
     border-radius: 0.5vw;
     cursor: pointer;
+    outline: none;
 }
 .login-page {
     display: none;
@@ -254,8 +256,24 @@ body::-webkit-scrollbar {
 .line-filter-3 {
     width: 0.8vw;
 }
+.inner-line-filter-1 , .inner-line-filter-2 , .inner-line-filter-3 {
+    width: 1.8vw;
+    height: 0.525vh;
+    border-radius: 2px;
+    background-color: black;
+    margin-top: 0.45vh;
+}
+.inner-line-filter-2 {
+    width: 1.4vw;
+}
+.inner-line-filter-3 {
+    width: 0.8vw;
+}
+.fa-times {
+    font-size: 2vw;
+}
 .filters-container {
-    width: 20vw;
+    width: 13.5vw;
     height: 100vh;
     background-color: white;
     position: fixed;
@@ -263,14 +281,69 @@ body::-webkit-scrollbar {
     top: 0;
     width: 0;
 }
-.close-filters-container {
-    position: relative;
-    right: -50%;
-    top: 10%;
-    width: 10vw;
+.filter-menu-div {
+    margin-top: 4vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-menu {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.filter-heading-div {
+    margin-top: 4vh;
+    height: 4vh;
+    background-color: black;
+}
+.gender-filter-div {
+    margin-top: 2vh;
     height: 8vh;
     background-color: black;
+}
+.top-new-filter-div {
+    margin-top: 3vh;
+    height: 8vh;
+    background-color: black;
+}
+.categories-filter-div {
+    margin-top: 6vh;
+    height: 20vh;
+    background-color: black;
+}
+.tos-faq-page-div {
+    height: 14vh;
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.faq-div , .tos-div {
+    width: 90%;
+    height: 6vh;
+    border: 1px solid black;
+    border-radius: 0.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8vw;
+    color: black;
+    font-family: futura;
+    font-weight: bold;
     cursor: pointer;
+}
+.close-filters-container {
+    width: 5vw;
+    height: 5vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .home-page-cart-button-container {
     position: fixed;
@@ -285,4 +358,197 @@ body::-webkit-scrollbar {
     position: absolute;
     right: 2vw;
     bottom: 3vh;
+}
+.mobile-container , .mobile-login-container {
+    display: none;
+}
+
+
+@media only screen and (max-width:468px){
+    .home-page-container {
+        display: none;
+    }
+    .mobile-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    .mobile-image {
+        width: 100%;
+        height: 100%;
+    }
+    .profile-picture-container {
+        width: 24vw;
+        height: 10vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-picture-div-mob {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    .mobile-profile-image {
+        height: 100%;
+        width: 100%;
+    }
+    .filters-menu-container {
+        width: 24vw;
+        height: 10vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .filter-button-mob {
+        width: 12vw;
+        height: 4vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+    .mob-filter-line-3 , .mob-filter-line-2 , .mob-filter-line-1 {
+        width: 90%;
+        height: 0.5vh;
+        background-color: white;
+        border-radius: 2px;
+    }
+    .mob-filter-line-2 {
+        width: 70%;
+    }
+    .mob-filter-line-3 {
+        width: 50%;
+    }
+    .share-button-container {
+        width: 24vw;
+        height: 10vh;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .share-button-mob {
+        width: 10vw;
+        height: 4vh;
+    }
+    .share-mob-image {
+        width: 100%;
+        height: 100%;
+    }
+    .cart-button-container {
+        width: 24vw;
+        height: 10vh;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cart-button-mob {
+        width: 8vw;
+        height: 5vh;
+    }
+    .cart-mob-image {
+        width: 100%;
+        height: 100%;
+    }
+    .mobile-login-container {
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+    }
+    .mob-back-div {
+        height: 10vh;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        font-family: futura;
+        justify-content: space-between;
+        padding-right: 8vw;
+        padding-left: 40%;
+    }
+    .fa-clone {
+        font-size: 6vw;
+    }
+    .mob-login-heading-div {
+        font-size: 6.5vw;
+    }
+    .mob-login-inputs-div {
+        width: 100%;
+        height: 20vh;
+        margin-top: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .mob-login-inputs {
+        width: 80%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .mob-username-div , .mob-password-div {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .mob-login-inputs label {
+        opacity: 69%;
+        color: black;
+        font-family: futura;
+        font-size: 18px;
+    }
+    .mob-username-input , .mob-password-input {
+        border: none;
+        outline: none;
+        font-family: futura;
+        width: 40vw;
+        height: 5vh;
+        font-size: 18px;
+    }
+    .mob-username-input::placeholder {
+        text-align: center;
+    }
+    .mob-password-input::placeholder {
+        text-align: center;
+    }
+    .mob-login-button-div {
+        height: 10vh;
+        width: 100%;
+        margin-top: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-button-mob {
+        width: 75%;
+        height: 70%;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: futura;
+        font-size: 5.2vw;
+        border: none;
+        outline: none;
+    }
+    .mobile-login-container {
+        display: none;
+    }
 }
