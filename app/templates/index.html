@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
+{% get_static_prefix as STATIC_SUFFIX %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Lucia</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/app.js" defer></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/app.js' %}" defer></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="https://kit.fontawesome.com/6c5f0342bd.js" crossorigin="anonymous"></script>
 </head>
@@ -16,7 +18,7 @@
         <div class="home-page-image-gallery-container">
             <!-- this is the container for image -->
             <div class="image-container">
-                <img src="images/first.png" alt="" class="image-in-gallery">
+                <img src="{% static 'images/first.png' %}" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -33,11 +35,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="images/second.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_SUFFIX }}images/second.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -54,11 +56,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="images/third.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_SUFFIX }}images/third.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -75,11 +77,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="images/fourth.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_SUFFIX }}images/fourth.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -96,11 +98,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="images/fifth.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_SUFFIX }}images/fifth.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -117,11 +119,11 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
             <div class="image-container">
-                <img src="images/third.png" alt="" class="image-in-gallery">
+                <img src="{{ STATIC_SUFFIX }}images/third.png" alt="" class="image-in-gallery">
                 <!-- this is the container for tag button -->
                 <div class="tag-button-container">
                     <div class="tag-button-add-button-div">
@@ -138,7 +140,7 @@
                 </div>
                 <!-- the container for share button -->
                 <div class="share-button-container">
-                    <img src="images/share-button.svg" alt="" class="share-button">
+                    <img src="{{ STATIC_SUFFIX }}images/share-button.svg" alt="" class="share-button">
                 </div>
             </div>
         </div>
@@ -147,7 +149,7 @@
             <!-- this is the profile picture -->
             <div class="profile-picture-div">
                 <div class="profile-pic">
-                    <img src="images/profilepic.png" alt="" class="profile-image">
+                    <img src="{{ STATIC_SUFFIX }}images/profilepic.png" alt="" class="profile-image">
                 </div>
             </div>
         </div>
@@ -168,19 +170,39 @@
                         <div class="username-input-div">
                             <label for="username">Username:</label>
                             <input type="text" id="username" class="username-input" placeholder="@LuciaMareno">
+         <form class="ajax-login-form" method="post">
+            {% csrf_token %}
+            <div class="login-page-container">
+                <div class="login-page">
+                    <div class="login-page-cross-button">
+                        <div class="close-login-page-container">
+                            <i class="fas fa-times"></i>
                         </div>
-                        <div class="password-input-div">
-                            <label for="password">Password:</label>
-                            <input type="text" id="password" class="password-input" placeholder="Hello1234">
+                    </div>
+                    <div class="login-page-heading">
+                        Login
+                    </div>
+                    <div class="login-page-inputs">
+                        <div class="inputs-container">
+
+                            <div class="username-input-div">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" class="username-input" name="username" placeholder="@LuciaMareno">
+                            </div>
+                            <div class="password-input-div">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" class="password-input" name="password" placeholder="Hello1234">
+                            </div>
+                            <br>
+                            <p class="login-request-result" style="color: #8b150f"></p>
                         </div>
-    
+                    </div>
+                    <div class="login-page-button">
+                        <button class="login-button">Login</button>
                     </div>
                 </div>
-                <div class="login-page-button">
-                    <button class="login-button">Login</button>
-                </div>
             </div>
-        </div>
+         </form>
         <!-- this is the container for filter button -->
         <div class="home-page-filter-button-container">
             <div class="filter-button">
@@ -228,7 +250,7 @@
         </div>
         <!-- this is the container for cart button -->
         <div class="home-page-cart-button-container">
-            <img src="images/cart.png" alt="" class="cart-image">
+            <img src="{{ STATIC_SUFFIX }}images/cart.png" alt="" class="cart-image">
         </div>
     </div>
     <!-- container for web is ended here -->
@@ -288,5 +310,46 @@
             </button>
         </div>
     </div>
+
+
+
+    <!-- AJAX for login form -->
+    <script type="application/javascript">
+        $(document).ready(function () {
+
+                //ajax login form
+                let loginForm = $('.ajax-login-form');
+                let loginPage = $('.login-page-container');
+                let loginRequestResult = $('.login-request-result');
+
+                $('.login-button').click(function (e) {
+                    e.preventDefault();
+                    console.log('login pressed');
+                    let data = loginForm.serialize();
+                    console.log(data);
+                    let action = {% url 'authenticate' %};
+                    let method = loginForm.attr('method');
+
+                    $.ajax({
+                        url: action,
+                        method: method,
+                        data: data,
+                        success: function (data) {
+                            if (data.authenticated){
+                                loginPage.html('<h2 style="text-align: center">Welcome {{ user.username }}</h2><br><p>Control Panel is under construction yet</p>')
+                            }
+                        },
+                        error: function (errors) {
+                            console.log('error', errors);
+                            loginRequestResult.html("username/password is invalid");
+                        },
+                    })
+
+
+                })
+
+
+            })
+    </script>
 </body>
 </html>
