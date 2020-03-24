@@ -2,10 +2,12 @@ $(document).ready( function(){
     $('.filter-button').click( function() {
         var toggleWidth = $(".filters-container").width() == "13.5vw" ? "0" : "13.5vw";
         $('.filters-container').animate({ width: toggleWidth });
+        $('.filters-page').css({ display: "block" }); 
     });
     $('.close-filters-container').click( function() {
         var toggleWidth = $(".filters-container").width() == "0" ? "13.5vw" : "0";
         $('.filters-container').animate({ width: toggleWidth });
+        $('.filters-page').css({ display: "none" }); 
     });
     $('.profile-picture-div ').click( function() {
         var toggleWidthPage = $(".login-page-container").width() == "50vw" ? "0" : "50vw";
