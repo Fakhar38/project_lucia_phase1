@@ -359,7 +359,9 @@ body::-webkit-scrollbar {
     right: 2vw;
     bottom: 3vh;
 }
-
+.mobile-container , .mobile-login-container {
+    display: none;
+}
 
 @media only screen and (max-width:468px){
     .home-page-container {
